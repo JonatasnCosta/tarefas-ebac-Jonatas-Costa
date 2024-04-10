@@ -1,0 +1,33 @@
+Algoritmo HoraDeAcordar
+    // Declaração de variáveis
+    Inteiro horaAtual, minutosAtual, horasDormir, minutosDormir, horaAcordar, minutosAcordar
+
+    // Entrada de dados
+    Escreva("Digite a hora atual: ")
+    Leia(horaAtual)
+    Escreva("Digite os minutos atuais: ")
+    Leia(minutosAtual)
+
+    Escreva("Digite quantas horas você pretende dormir: ")
+    Leia(horasDormir)
+    Escreva("Digite quantos minutos você pretende dormir: ")
+    Leia(minutosDormir)
+
+    // Cálculo da hora de acordar
+    horaAcordar <- horaAtual + horasDormir
+    minutosAcordar <- minutosAtual + minutosDormir
+
+    // Verifica se ultrapassou 60 minutos e ajusta
+    Se minutosAcordar >= 60 Então
+        horaAcordar <- horaAcordar + 1
+        minutosAcordar <- minutosAcordar - 60
+    FimSe
+
+    // Verifica se ultrapassou 24 horas e ajusta
+    Se horaAcordar >= 24 Então
+        horaAcordar <- horaAcordar - 24
+    FimSe
+
+    // Saída
+    Escreva("Você deve acordar às ", horaAcordar, " horas e ", minutosAcordar, " minutos.")
+FimAlgoritmo
